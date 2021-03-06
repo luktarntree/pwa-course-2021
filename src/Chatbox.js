@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Chatbox.css';
 // import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 
 function Chatbox() {
     const [text, setText] = useState("");
@@ -23,12 +22,7 @@ function Chatbox() {
         }
     }
     return (
-        <div className="App">
-            <div className="App-header">
-                <Link to="/friend-list">
-                    <button>Friends</button>
-                </Link>
-            </div>
+        <div className="App-chatroom-container">
             <div className="App-chatroom">
                 {
                     lines.map(x => {
