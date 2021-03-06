@@ -1,6 +1,6 @@
 // import router components
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import App from './App'
+import Chatbox from './Chatbox'
 import FriendList from './FriendList'
 
 // create router component
@@ -12,7 +12,7 @@ function Router() {
                     <FriendList />
                 </Route>
                 <Route path="/">
-                    <App />
+                    <Chatbox />
                 </Route>
             </Switch>
         </BrowserRouter>
