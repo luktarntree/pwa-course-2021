@@ -36,3 +36,7 @@
   align-items: center;
   display: flex;
 }
+
+.App-chatroom-text-default {
+  background: grey;
+}
