@@ -28,31 +28,3 @@
   flex: 12;
   background-color: silver;
 }
-
-.App-chatroom-text {
-  margin: 8px;
-  background-color: rgb(201, 138, 138);
-}
-
-.App-textbox {
-  flex: 1;
-  background-color: gray;
-  justify-content: center;
-  align-items: stretch;
-  display: flex;
-}
-
-.App-textbox-input {
-  flex: 5;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.App-textbox-send {
-  flex: 1;
-  height: 100%;
-  vertical-align: middle;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
