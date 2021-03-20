@@ -6,7 +6,12 @@ import App from './App';
 function Chatbox() {
     //Use State
     const [text, setText] = useState("");
-    const [lines, setLines] = useState([]);
+    const [lines, setLines] = useState([{
+        sender: "Bot",
+        message: "Hello! Welcome to the chat!",
+        timestamp: (new Date()),
+        classname: "default"
+    }]);
 
     //Use Effect
     useEffect(() => {
@@ -17,7 +22,6 @@ function Chatbox() {
     const onTextChange = (event) => {
         setText(event.target.value);
     };
-
     const onSend = () => {
         setLines(lines => [...lines, {
             sender: "Me",
@@ -26,13 +30,18 @@ function Chatbox() {
             classname: "default"
         }]);
         setText("");
-    }
+    };
+    const checkSender = (line) => {
+        if (line.sender === "Me") {
+            line.classname = "mine";
+        }
+    };
 
     const sendOnEnter = (e) => {
         if (e.key === 'Enter') {
             onSend();
         }
-    }
+    };
 
     //Render
     return (
@@ -41,6 +50,7 @@ function Chatbox() {
                 <div className="App-chatroom">
                     {
                         lines.map(x => {
+                            checkSender(x)
                             return <div className={"App-chatroom-text App-chatroom-text-" + x.classname}>
                                 <div>
                                     {x.sender + ":"}

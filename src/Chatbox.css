@@ -11,7 +11,6 @@
 
 .App-chatroom-text {
   margin: 8px;
-  background-color: rgb(201, 138, 138);
 }
 
 .App-textbox {
@@ -39,4 +38,7 @@
 
 .App-chatroom-text-default {
   background: grey;
+}
+.App-chatroom-text-mine {
+  background-color: rgb(201, 138, 138);
 }
