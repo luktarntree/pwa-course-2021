@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 // import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import Chatbox from './Chatbox'
 
 function App({ children }) {
   return (
@@ -10,6 +9,12 @@ function App({ children }) {
       <div className="App-header">
         <Link to="/friend-list">
           <button>Friends</button>
+        </Link>
+        <Link to="/profile">
+          <button>Profile</button>
+        </Link>
+        <Link to="/">
+          <button>Chatbox</button>
         </Link>
       </div>
       <div className="App-content">
