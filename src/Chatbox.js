@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import './Chatbox.css';
 import App from './App';
+import firebase from './firebaseConfig';
 // import React, { useEffect, useState } from "react";
+
+const chatroomRef = firebase.database().ref('chatroom-1');  // make chatroom folder in database
 
 function Chatbox() {
     //Use State
@@ -15,8 +18,8 @@ function Chatbox() {
 
     //Use Effect
     useEffect(() => {
-        console.log("total text chat: " + lines.length)
-    }, [lines]);
+        chatroomRef.on('child_added')
+    }, []);
 
     //Functions
     const onTextChange = (event) => {
