@@ -18,20 +18,35 @@ function Chatbox() {
 
     //Use Effect
     useEffect(() => {
-        chatroomRef.on('child_added')
-    }, []);
+        chatroomRef.on('child_added', snapshot => {
+            let x = snapshot.val();
+            setLines(l => [...l, {
+                sender: x.sender,
+                message: x.message,
+                timestamp: (new Date()),
+                classname: x.classname
+            }])
+        })
+    }, []); //empty array = it will useEffect only once
 
     //Functions
     const onTextChange = (event) => {
         setText(event.target.value);
     };
     const onSend = () => {
-        setLines(lines => [...lines, {
+        // setLines(lines => [...lines, {
+        //     sender: "Me",
+        //     message: text,
+        //     timestamp: (new Date()),
+        //     classname: "default"
+        // }]);
+
+        //push message to firebase server
+        chatroomRef.push({
             sender: "Me",
             message: text,
-            timestamp: (new Date()),
-            classname: "default"
-        }]);
+            className: "mine"
+        })
         setText("");
     };
     const checkSender = (line) => {
