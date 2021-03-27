@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 
 // Your web app's Firebase configuration
+// กำหนดว่าจะเอาไปต่อที่ไหน
 var firebaseConfig = {
     apiKey: "AIzaSyAOw74bMRbvhSbDwAv75F7lJKyTUW3n6Ac",
     authDomain: "lt-pwa-class-chat-app.firebaseapp.com",
