@@ -18,13 +18,13 @@ function Chatbox() {
 
     //Use Effect
     useEffect(() => {
+        //read
         chatroomRef.on('child_added', snapshot => {
             let x = snapshot.val();
             setLines(l => [...l, {
                 sender: x.sender,
                 message: x.message,
-                timestamp: (new Date()),
-                classname: x.classname
+                timestamp: (new Date())
             }])
         })
     }, []); //empty array = it will useEffect only once
@@ -41,11 +41,10 @@ function Chatbox() {
         //     classname: "default"
         // }]);
 
-        //push message to firebase server
+        //push message to firebase server (write)
         chatroomRef.push({
             sender: "Me",
-            message: text,
-            className: "mine"
+            message: text
         })
         setText("");
     };
