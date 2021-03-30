@@ -9,12 +9,7 @@ const chatroomRef = firebase.database().ref('chatroom-1');  // make chatroom fol
 function Chatbox() {
     //Use State
     const [text, setText] = useState("");
-    const [lines, setLines] = useState([{
-        sender: "Bot",
-        message: "Hello! Welcome to the chat!",
-        timestamp: (new Date()),
-        classname: "default"
-    }]);
+    const [lines, setLines] = useState([]);
 
     //Use Effect
     useEffect(() => {
@@ -24,7 +19,7 @@ function Chatbox() {
             setLines(l => [...l, {
                 sender: x.sender,
                 message: x.message,
-                timestamp: (new Date())
+                timestamp: (new Date(x.timestamp))
             }])
         })
     }, []); //empty array = it will useEffect only once
@@ -44,7 +39,8 @@ function Chatbox() {
         //push message to firebase server (write)
         chatroomRef.push({
             sender: "Me",
-            message: text
+            message: text,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
         })
         setText("");
     };
@@ -76,7 +72,7 @@ function Chatbox() {
                                     {x.message}
                                 </div>
                                 <div>
-                                    {x.timestamp.toLocaleDateString()}
+                                    {x.timestamp.toLocaleDateString() + " " + x.timestamp.toLocaleTimeString()}
                                 </div>
                             </div>
                         }
