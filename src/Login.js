@@ -10,13 +10,15 @@ function Login() {
     const onTextChange = (event) => {
         setText(event.target.value)
     };
-    const SaveLogin = () => { }
+    const SaveLogin = (username) => {
+        localStorage.setItem('username', username)
+    }
 
     return (
         <div>
             <input type="text" value={text} placeholder="Type in your name" onChange={onTextChange} />
             <Link to="/chatbox">
-                <button onClick={SaveLogin}>Start Chatting!</button>
+                <button onClick={SaveLogin(text)}>Start Chatting!</button>
             </Link>
         </div>
     )
