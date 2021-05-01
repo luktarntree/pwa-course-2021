@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Chatbox from './Chatbox';
 import FriendList from './FriendList';
 import Profile from './Profile';
-import Login from './Login';
+import { Login } from './Login';
 
 // create router component
 function Router() {

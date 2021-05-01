@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from './firebaseConfig';
 
 const userRef = firebase.database().ref('user-ref');
 
-function Loginfunc() {
+function Login() {
     const [text, setText] = useState("");
 
     const onTextChange = (event) => {
@@ -22,4 +22,4 @@ function Loginfunc() {
     )
 }
 
-export default Loginfunc;
+export { Login };
