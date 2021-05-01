@@ -29,16 +29,11 @@ function Chatbox() {
         setText(event.target.value);
     };
     const onSend = () => {
-        // setLines(lines => [...lines, {
-        //     sender: "Me",
-        //     message: text,
-        //     timestamp: (new Date()),
-        //     classname: "default"
-        // }]);
+        const username = localStorage.getItem('username');
 
         //push message to firebase server (write)
         chatroomRef.push({
-            sender: "Me",
+            sender: username,
             message: text,
             timestamp: firebase.database.ServerValue.TIMESTAMP
         })
