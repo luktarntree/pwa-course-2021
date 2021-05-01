@@ -1,4 +1,4 @@
-import { useState, useEffect, Component } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from './firebaseConfig';
 
@@ -10,7 +10,7 @@ function Login() {
     const onTextChange = (event) => {
         setText(event.target.value)
     };
-    const SaveLogin = (username) => {
+    const saveLogin = (username) => {
         localStorage.setItem('username', username)
     }
 
@@ -18,7 +18,7 @@ function Login() {
         <div>
             <input type="text" value={text} placeholder="Type in your name" onChange={onTextChange} />
             <Link to="/chatbox">
-                <button onClick={SaveLogin(text)}>Start Chatting!</button>
+                <button onClick={saveLogin(text)}>Start Chatting!</button>
             </Link>
         </div>
     )
