@@ -11,7 +11,7 @@ function App({ children }) {
         <Link to="/profile">
           <button>Profile</button>
         </Link>
-        <Link to="/">
+        <Link to="/chatbox">
           <button>Chatbox</button>
         </Link>
       </div>
