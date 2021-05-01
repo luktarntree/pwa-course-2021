@@ -40,7 +40,7 @@ function Chatbox() {
         setText("");
     };
     const checkSender = (line) => {
-        if (line.sender === "Me") {
+        if (line.sender === localStorage.getItem('username')) {
             line.classname = "mine";
         }
     };
