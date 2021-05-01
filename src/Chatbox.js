@@ -56,23 +56,25 @@ function Chatbox() {
         <App>
             <div className="App-chatroom-container">
                 <div className="App-chatroom">
-                    {
-                        lines.map(x => {
-                            checkSender(x)
-                            return <div className={"App-chatroom-text App-chatroom-text-" + x.classname}>
-                                <div>
-                                    {x.sender + ":"}
+                    <div className="App-chatroom-content">
+                        {
+                            lines.map(x => {
+                                checkSender(x)
+                                return <div className={"App-chatroom-text App-chatroom-text-" + x.classname}>
+                                    <div>
+                                        {x.sender + ":"}
+                                    </div>
+                                    <div>
+                                        {x.message}
+                                    </div>
+                                    <div>
+                                        {x.timestamp.toLocaleDateString() + " " + x.timestamp.toLocaleTimeString()}
+                                    </div>
                                 </div>
-                                <div>
-                                    {x.message}
-                                </div>
-                                <div>
-                                    {x.timestamp.toLocaleDateString() + " " + x.timestamp.toLocaleTimeString()}
-                                </div>
-                            </div>
+                            }
+                            )
                         }
-                        )
-                    }
+                    </div>
                 </div>
                 <div className="App-textbox">
                     <input type="text" className="App-textbox-input" value={text} placeholder="start typing to chat :)" onChange={onTextChange} onKeyDown={sendOnEnter} />

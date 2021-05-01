@@ -1,20 +1,20 @@
 .App-chatroom-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  overflow: hidden;
 }
 
 .App-chatroom {
-  flex: 12;
+  height: calc(100vh - 60px - 50px);
+  overflow-y: scroll;
   background-color: silver;
+  display: flex;
+  flex-direction: column-reverse;
 }
-
 .App-chatroom-text {
   margin: 8px;
 }
 
 .App-textbox {
-  flex: 1;
+  height: 50px;
   background-color: gray;
   justify-content: center;
   align-items: stretch;
