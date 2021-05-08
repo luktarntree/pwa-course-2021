@@ -1,10 +1,9 @@
 import './App.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Login } from './Login';
 
 function App({ children }) {
-  const [username, setUsername] = useState(localStorage.getItem('username'));
+  const username = useState(localStorage.getItem('username'));
   const logOut = () => {
     localStorage.setItem('username', '')
     localStorage.setItem('loggedin', '')

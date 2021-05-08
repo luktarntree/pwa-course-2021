@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import firebase from './firebaseConfig';
-
-const userRef = firebase.database().ref('user-ref');
 
 function Login() {
     const [text, setText] = useState("");
