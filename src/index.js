@@ -18,7 +18,7 @@ reportWebVitals();
 
 //install service worker when website is loaded
 if ('serviceWorker' in navigator) { //<- check if the browser supports serviceworker
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register('sw.js') //<- install serviceworker
     .then((registeration) => { console.log("Registeration is successful. scope is: ", registeration.scope); })
-    .catch((error) => { console.log("serviceworker registeration failed. error: ", error) })
+    .catch((error) => { console.log("serviceworker registeration failed. error: ", error); })
 }
