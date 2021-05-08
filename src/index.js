@@ -15,3 +15,10 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+//install service worker when website is loaded
+if ('serviceWorker' in navigator) { //<- check if the browser supports serviceworker
+  navigator.serviceWorker.register('sw.js')
+    .then((registeration) => { console.log("Registeration is successful. scope is: ", registeration.scope); })
+    .catch((error) => { console.log("serviceworker registeration failed. error: ", error) })
+}
